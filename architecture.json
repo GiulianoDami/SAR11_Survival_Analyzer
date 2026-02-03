@@ -1,0 +1,37 @@
+{
+    "language": "Python",
+    "dependency_file": "requirements.txt",
+    "dependencies": ["numpy", "matplotlib", "pandas"],
+    "files": [
+        {
+            "path": "src/sar11_model.py",
+            "description": "Core modeling logic for SAR11 population dynamics and stress analysis",
+            "exports": ["class SAR11Model", "function simulate_population", "function analyze_cell_behavior"]
+        },
+        {
+            "path": "src/environmental_stressor.py",
+            "description": "Defines and applies various environmental stressors to the SAR11 model",
+            "exports": ["class EnvironmentalStressor", "function apply_phytoplankton_bloom", "function apply_nutrient_scarcity"]
+        },
+        {
+            "path": "src/visualization.py",
+            "description": "Handles plotting and visualization of simulation results",
+            "exports": ["function plot_population_trends", "function plot_cell_size_distribution"]
+        },
+        {
+            "path": "src/report_generator.py",
+            "description": "Generates detailed reports from simulation outputs",
+            "exports": ["class ReportGenerator", "function generate_summary_report"]
+        },
+        {
+            "path": "src/main.py",
+            "description": "Entry point for running simulations and analyses",
+            "imports_from_other_files": ["sar11_model.py", "environmental_stressor.py", "visualization.py", "report_generator.py"]
+        },
+        {
+            "path": "src/__init__.py",
+            "description": "Package initializer to expose core functionality",
+            "exports": ["class SAR11Model", "class EnvironmentalStressor", "function plot_population_trends", "function plot_cell_size_distribution"]
+        }
+    ]
+}
